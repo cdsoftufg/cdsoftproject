@@ -1,0 +1,12 @@
+<ion-view title="Histórico" id="phistorico">
+    <ion-content class="has-header">        
+            <div id="historial-markdown1" style="color:#000000;">
+                <p style="margin:5px;">Historial de asignaturas</p>
+            </div>
+            <ion-list id="hostorico-list">
+                <ion-item ng-repeat="asignatura in asignaturasP">
+                    <i class="icon ion-android-arrow-dropright-circle"></i> {{asignatura.asignatura}} <br>Código: {{asignatura.codAsignatura}} <br>Ciclo: {{asignatura.ciclo}}
+                </ion-item>
+            </ion-list>       
+    </ion-content>
+</ion-view>

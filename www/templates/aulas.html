@@ -1,0 +1,9 @@
+<ion-view view-title="Aulas del ciclo actual">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="aula in aulas">
+        <i class="icon ion-android-arrow-dropright-circle"></i> {{aula.nombAsignatura}} <br>{{aula.codAsignatura}} <br> Aula: {{aula.nombAula}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

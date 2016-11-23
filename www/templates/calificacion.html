@@ -1,0 +1,12 @@
+<ion-view view-title="Calificaciones">
+  <ion-content>
+	<ion-list>
+      <ion-item ng-repeat="nota in calificacion">
+        <i class="icon ion-ios-pricetag-outline"></i> {{nota.nEvaluacion}}: {{nota.calificacion}}                 
+      </ion-item>      
+      <ion-item ng-repeat="total in cum">
+        <i class="icon ion-ios-pricetag"></i> Nota final: <b>{{total.calc}} </b>
+      </ion-item>      
+    </ion-list>
+  </ion-content>
+</ion-view>

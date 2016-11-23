@@ -1,0 +1,9 @@
+<ion-view view-title="Asignaturas del ciclo actual">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="calificacion in calificaciones" href="#/app/calificaciones/{{calificacion.codInscrito}}">
+        <i class="icon ion-android-arrow-dropright-circle"></i> {{calificacion.nombAsignatura}} <br>{{calificacion.codAsignatura}} | G{{calificacion.nGrupo}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

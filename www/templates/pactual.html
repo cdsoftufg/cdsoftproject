@@ -1,0 +1,12 @@
+<ion-view title="Actual" id="pactual">
+    <ion-content class="has-header">        
+            <div id="actual-markdown1" style="color:#000000;">
+                <p style="margin:5px;">Asignaturas <strong>aprobadas</strong></p>
+            </div>
+            <ion-list id="actual-list">
+                <ion-item ng-repeat="asignatura in asignaturasA">
+                    <i class="icon ion-android-arrow-dropright-circle"></i> {{asignatura.codAsignatura}} <br>{{asignatura.asignatura}} <br>Nota final: {{asignatura.calificacionF}}
+                </ion-item>
+            </ion-list>        
+    </ion-content>
+</ion-view>
