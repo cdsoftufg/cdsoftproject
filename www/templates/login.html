@@ -1,20 +1,19 @@
-<ion-view>
-  <ion-header-bar>
-    <h1 class="title">Bienvenido</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Cerrar</button>
-    </div>
+<ion-view view-title="Login" name="login-view">
+  <ion-header-bar class="bar-cdsoft">
   </ion-header-bar>
   <ion-content>
+    <div> 
+      <img src="img/Credenciales.png" alt="Top banner" class="img-responsive">
+    </div>
     <form ng-submit="doLogin()">
       <div class="list">
-        <label class="item item-input">
+        <label class="item item-input item-stacked-label">
           <span class="input-label">Usuario</span>
-          <input type="text" ng-model="loginData.username">
+          <input type="text" ng-model="loginData.username" autocapitalize="off" autocorrect="off" placeholder="Digite el usuario">
         </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Contraseña</span>
+          <input type="password" ng-model="loginData.password" placeholder="Digite la contraseña">
         </label>
         <label class="item">
           <button class="button button-block button-positive" type="submit">Ingresar <i class="icon ion-log-in"></i></button>
@@ -22,4 +21,7 @@
       </div>
     </form>
   </ion-content>
+  <div class="bar bar-footer">
+    <img src="img/Footer.png" alt="Button banner" class="img-responsive">
+  </div>  
 </ion-view>

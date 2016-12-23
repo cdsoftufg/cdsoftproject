@@ -1,6 +1,6 @@
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
-    <ion-nav-bar class="bar-positive">
+    <ion-nav-bar class="bar-cdsoft">
       <ion-nav-back-button>
       </ion-nav-back-button>
 
@@ -13,39 +13,45 @@
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
-    <ion-header-bar class="bar-positive">
-      <h1 class="title">Servicios disponibles</h1>
+    <ion-header-bar class="bar-cdsoft">      
+      <img src="img/Postgrados_126x50_w.png" class="img-top-brand img-center" />      
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
+        <!--<ion-item menu-close ng-click="login()">
           <i class="icon ion-ionic"></i> Login
-        </ion-item>
-        <ion-item menu-close href="#/app/aulas">
-          <i class="icon ion-ionic"></i> Aulas
+        </ion-item>-->
+        <ion-item menu-close class="item-divider">
+          <i class="icon ion-gear-a"></i> Servicios disponibles 
+        </ion-item>        
+        <ion-item menu-close href="#/app/aulas" class="item item-avatar">
+          <img src="img/optAulas.png">Aulas
         </ion-item>          
-        <ion-item menu-close href="#/app/biblioweb">
-          <i class="icon ion-ionic"></i> Biblioweb ?
+        <!--<ion-item menu-close href="#/app/biblioweb">
+          <i class="icon ion-ios-book-outline"></i> Biblioweb ?
+        </ion-item>-->  
+        <ion-item menu-close href="#/app/calendario" class="item item-avatar">
+          <img src="img/optCalendarioAcad.png">Calendario Académico
         </ion-item>  
-        <ion-item menu-close href="#/app/calendario">
-          <i class="icon ion-ionic"></i> Calendario Académico ?
+        <ion-item menu-close href="#/app/calificaciones" class="item item-avatar">
+          <img src="img/optCalificaciones.png">Calificaciones
         </ion-item>  
-        <ion-item menu-close href="#/app/asignaturas">
-          <i class="icon ion-ionic"></i> Calificaciones
-        </ion-item>  
-        <ion-item menu-close href="#/app/estadocuenta">
-          <i class="icon ion-ionic"></i> Estado de cuenta
+        <ion-item menu-close href="#/app/estadocuenta" class="item item-avatar">
+          <img src="img/optEstCuenta.png">Estado de cuenta
         </ion-item>
-        <ion-item menu-close href="#/app/notievent">
-          <i class="icon ion-ionic"></i> Noticias y eventos ?
+        <ion-item menu-close href="#/app/notievent" class="item item-avatar">
+          <img src="img/optNews.png">Noticias y eventos
         </ion-item>
-        <ion-item menu-close href="#/app/aulavirtual">
-          <i class="icon ion-ionic"></i> Aula virtual
+        <ion-item menu-close href="#/app/aulavirtual" class="item item-avatar">
+          <img src="img/optCVirtual.png">Aula virtual
         </ion-item>  
-        <ion-item menu-close href="#/app/pensum">
-          <i class="icon ion-ionic"></i> Pensum
+        <ion-item menu-close href="#/app/pensum" class="item item-avatar">
+          <img src="img/optPensum.png">Pensum
         </ion-item>
+        <ion-item menu-close href="#/app/emergencias" class="item item-avatar">
+          <img src="img/optEmergencias.png"> Servicios de emergencia
+        </ion-item>         
       </ion-list>
-    </ion-content>
-  </ion-side-menu>
+    </ion-content>   
+  </ion-side-menu> 
 </ion-side-menus>

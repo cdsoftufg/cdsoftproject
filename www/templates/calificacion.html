@@ -1,12 +1,53 @@
 <ion-view view-title="Calificaciones">
+  <ion-header-bar class="bar-subheader bar-positive">
+    <h4 class="title">Usuario: {{phA}}</h4>  
+  </ion-header-bar>
   <ion-content>
 	<ion-list>
-      <ion-item ng-repeat="nota in calificacion">
-        <i class="icon ion-ios-pricetag-outline"></i> {{nota.nEvaluacion}}: {{nota.calificacion}}                 
+      <!--<ion-item ng-repeat="nota in calificacion" ng-class="nota.letter? 'item-divider':''">
+        {{nota.nEvaluacion}}: {{nota.calificacion}}        
       </ion-item>      
       <ion-item ng-repeat="total in cum">
         <i class="icon ion-ios-pricetag"></i> Nota final: <b>{{total.calc}} </b>
+      </ion-item>
+    </ion-list>-->
+    <div ng-repeat="nota in calificacionL">
+      <ion-item class="item-stable" 
+                ng-click="toggleGroup(nota)"
+                ng-class="{active: isGroupShown(nota)}">        
+          <i class="icon" ng-class="isGroupShown(nota) ? 'ion-minus' : 'ion-plus'"></i>
+                    &nbsp;                
+          {{nota.tip}}
+      </ion-item>
+      <ion-item class="item-accordion"                 
+                ng-repeat="item in nota.items"
+                ng-show="isGroupShown(nota)">          
+          <i class="icon ion-ionic"></i> {{item.nEvaluacion}} 
+          <p>Calificación: <strong ng-class="'{{item.calificacion}} >= 6' ? 'colorNotas' : 'colorNotas3'">{{item.calificacion}}</strong> <span class="AlineadoDer">Ponderación: {{item.porcentaje}}%</span></p>
       </ion-item>      
-    </ion-list>
+    </div>
+    <div ng-repeat="nota in calificacionP">
+      <ion-item class="item-stable" 
+                ng-click="toggleGroup(nota)"
+                ng-class="{active: isGroupShown(nota)}">  
+          <i class="icon" ng-class="isGroupShown(nota) ? 'ion-minus' : 'ion-plus'"></i>
+                  &nbsp;
+          {{nota.tip}}
+      </ion-item>
+      <ion-item class="item-accordion"                 
+                ng-repeat="item in nota.items"
+                ng-show="isGroupShown(nota)">          
+          <i class="icon ion-ionic"></i> {{item.nEvaluacion}} 
+          <p>Calificación: <strong ng-class="'{{item.calificacion}} >= 6' ? 'colorNotas2' : 'colorNotas3'">{{item.calificacion}}</strong> <span class="AlineadoDer">Ponderación: {{item.porcentaje}}%</span></p>
+      </ion-item>      
+    </div> 
+    <ion-item ng-repeat="total in cum">
+        <i class="icon ion-ios-pricetag"></i> Nota final: <strong ng-class="'{{total.calc}} >= 6' ? 'colorNotas' : 'colorNotas3'">{{total.calc}} </strong>
+    </ion-item>   
   </ion-content>
+    <div class="bar bar-footer">
+      <p>Develop By CDSOFT - Copyright &copy; 2017
+      Powered By UFG Cloud </p>
+      <span><img src="img/uvirtual.png" alt="Button banner" class="img-responsive img-brand-footer"></span>
+    </div>  
 </ion-view>

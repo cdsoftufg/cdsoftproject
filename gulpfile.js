@@ -11,6 +11,14 @@ var paths = {
   sass: ['./scss/**/*.scss']
 };
 
+gulp.task('scripts', function () {
+    return copyScripts({
+        src: [
+            'node_modules/login/rsa.js'
+        ]
+    });
+});
+
 gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {

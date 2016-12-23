@@ -1,5 +1,19 @@
 <ion-view view-title="Calendario Académico">
-  <ion-content>
-    <h1>Calendario Académico</h1>
-  </ion-content>
+	<ion-header-bar class="bar-subheader bar-positive">
+	  <h4 class="title">Usuario: {{phA}}</h4>  
+	</ion-header-bar>
+	<ion-content>
+    	<ion-list>
+	      <ion-item ng-repeat="item in calendario">
+	        {{item.codAsignatura}} | {{item.nAsignatura}}
+	        <p>Inicio: {{item.fechaIni}}</p>
+	        <p>Final: {{item.fechaFin}}</p>
+	      </ion-item>      
+	    </ion-list>
+    </ion-content>
+        <div class="bar bar-footer">
+      <p>Develop By CDSOFT - Copyright &copy; 2017
+      Powered By UFG Cloud </p>
+      <span><img src="img/uvirtual.png" alt="Button banner" class="img-responsive img-brand-footer"></span>
+    </div>
 </ion-view>

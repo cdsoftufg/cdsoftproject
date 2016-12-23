@@ -1,5 +1,36 @@
 <ion-view view-title="Noticias y eventos">
-  <ion-content>
-    <h1>Noticias y eventos</h1>
-  </ion-content>
+	<ion-header-bar class="bar-subheader bar-positive">
+  		<h4 class="title">Usuario: {{phA}}</h4>  
+	</ion-header-bar>
+	<ion-content>
+    	<!-- Widget Id is extracted from the location parameter.
+       Expected url is: http://k-rudy.github.io/phonegap-twitter-timeline/?410453165654278145 -->
+  <script type="text/javascript">
+    !function(d, s, id){
+      var fjs = d.getElementsByTagName(s)[0];
+      var p = /^http:/.test(d.location) ? 'http' : 'https';
+      var aid = id + '_timeline';
+      var widget_id = d.location.search.replace('?', '');
+      if (!d.getElementById(aid)) {
+        var a = d.createElement('a');
+        a.id = aid;
+        a.href = '#';
+        a.setAttribute('class', 'twitter-timeline');
+        a.setAttribute('data-widget-id', widget_id);
+        fjs.parentNode.insertBefore(a,fjs);
+      }
+      if (!d.getElementById(id)) {
+        var js = d.createElement(s);
+        js.id = id;
+        js.src = p + "://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js,fjs);
+      }
+    }(document,"script","twitter-wjs");
+  </script>
+  	</ion-content>
+    <div class="bar bar-footer">
+      <p>Develop By CDSOFT - Copyright &copy; 2017
+      Powered By UFG Cloud </p>
+      <span><img src="img/uvirtual.png" alt="Button banner" class="img-responsive img-brand-footer"></span>
+    </div>  	
 </ion-view>

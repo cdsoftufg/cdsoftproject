@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngResource','ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -32,6 +32,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
+  .state('login', {
+      url: '/login',      
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl'  
+  })
+
+  .state('app.main', {
+      url: '/main',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/main.html',
+          controller: 'MainCtrl'
+        }
+      }
+    })
+
   .state('app.aulas', {
     url: '/aulas',
     views: {
@@ -55,7 +71,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/calendario',
     views: {
       'menuContent': {
-        templateUrl: 'templates/calendario.html'
+        templateUrl: 'templates/calendario.html',
+        controller: 'CalendAcadCtrl'
       }
     }
   })
@@ -64,7 +81,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: '/estadocuenta',
       views: {
         'menuContent': {
-          templateUrl: 'templates/estadocuenta.html',          
+          templateUrl: 'templates/estadocuenta.html', 
+          controller: 'EstadoCuentaCtrl',         
           abstract:true
         }
       }
@@ -90,11 +108,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
-    .state('app.notievent', {
+  .state('app.notievent', {
     url: '/notievent',
     views: {
-      'menuContent': {
-        templateUrl: 'templates/notievent.html'
+      'menuContent': {        
+        controller: 'NoticiasCtrl'
       }
     }
   })
@@ -102,8 +120,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   .state('app.aulavirtual', {
       url: '/aulavirtual',
       views: {
-        'menuContent': {
-          templateUrl: 'templates/aulavirtual.html'
+        'menuContent': {          
+          controller: 'AulaVirtualCtrl'
         }
       }
     })
@@ -113,6 +131,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'templates/pensum.html',
+          controller: 'PensumCtrl',
           abstract:true
         }
       }
@@ -156,7 +175,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'CalificacionCtrl'
       }
     }
+  })
+
+  .state('app.emergencias', {
+      url: '/emergencias',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/emergencias.html',
+          controller: 'EmergenciasCtrl'
+        }
+      }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/calificaciones');
+  $urlRouterProvider.otherwise('/login');
 });

@@ -1,12 +1,35 @@
-<ion-view title="Actual" id="ecactual">
-    <ion-content class="has-header">        
-            <div id="actual-markdown6" style="color:#000000;">
-                <p style="margin:5px;">Pagos <strong>pendientes</strong></p>
-            </div>
-            <ion-list id="actual-list">
-                <ion-item ng-repeat="pago in pagospendientes">
-                    <i class="icon ion-android-arrow-dropright-circle"></i> {{pago.descripcion}} <br>Monto: {{pago.monto}} <br>Fecha vencimiento: {{pago.fechaVencimiento}}
-                </ion-item>
-            </ion-list>        
+<ion-view title="Cuotas próximas a pagar">
+    <ion-header-bar class="bar-subheader bar-positive">
+        <h4 class="title">Usuario: {{phA}}</h4>  
+    </ion-header-bar>
+    <ion-content>        
+        <ion-list id="actual-list">
+            <ion-item class="item item-divider">                        
+            <p><i class="icon ion-stop energized"></i> Próxima a vencer &nbsp;|&nbsp;
+            <i class="icon ion-stop assertive"></i> Vencida</p>
+            </ion-item>
+            <ion-item ng-repeat="ciclo in ciclos" class="item item-divider">
+                Ciclo actual: {{ciclo.cActual}}
+            </ion-item>
+            <ion-item ng-repeat="pago in pagospendientes" class="item item-icon-left {{pago.color}}">
+                <i class="icon ion-cash"></i> {{pago.descripcion}}
+                <p>Monto: ${{pago.monto}}</p>
+                <p>Fecha vencimiento: {{pago.fechaVencimiento}}</p>
+            </ion-item>            
+        </ion-list>    
+        <!--<ion-list>
+          <div collection-repeat="pago in pagospendientes | filter:searchText | groupByCiclo" divider-collection-repeat>
+              <ion-item>
+                <div>{{ pago.descripcion }}</div>
+                <div>{{ pago.monto }}</div>
+                <div>{{ pago.fechaVencimiento }}</div>
+              </ion-item>
+          </div>
+        </ion-list> -->
     </ion-content>
+    <div class="bar bar-footer">
+      <p>Develop By CDSOFT - Copyright &copy; 2017
+      Powered By UFG Cloud </p>
+      <span><img src="img/uvirtual.png" alt="Button banner" class="img-responsive img-brand-footer"></span>
+    </div>    
 </ion-view>

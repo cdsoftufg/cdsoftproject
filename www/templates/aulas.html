@@ -1,9 +1,17 @@
 <ion-view view-title="Aulas del ciclo actual">
+<ion-header-bar class="bar-subheader bar-positive">
+  <h4 class="title">Usuario: {{phA}}</h4>  
+</ion-header-bar>
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="aula in aulas">
-        <i class="icon ion-android-arrow-dropright-circle"></i> {{aula.nombAsignatura}} <br>{{aula.codAsignatura}} <br> Aula: {{aula.nombAula}}
+      <ion-item ng-repeat="aula in aulas" class="item item-avatar">
+        <img src="img/iAulaMap.png"> {{aula.nombAsignatura}} <p>{{aula.codAsignatura}}</p> <p>Aula: {{aula.nombAula}}</p>
       </ion-item>
     </ion-list>
   </ion-content>
+    <div class="bar bar-footer">
+      <p>Develop By CDSOFT - Copyright &copy; 2017
+      Powered By UFG Cloud </p>
+      <span><img src="img/uvirtual.png" alt="Button banner" class="img-responsive img-brand-footer"></span>
+    </div>  
 </ion-view>

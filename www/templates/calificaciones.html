@@ -1,9 +1,18 @@
 <ion-view view-title="Asignaturas del ciclo actual">
+<ion-header-bar class="bar-subheader bar-positive">
+  <h4 class="title">Usuario: {{phA}}</h4>  
+</ion-header-bar>
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="calificacion in calificaciones" href="#/app/calificaciones/{{calificacion.codInscrito}}">
-        <i class="icon ion-android-arrow-dropright-circle"></i> {{calificacion.nombAsignatura}} <br>{{calificacion.codAsignatura}} | G{{calificacion.nGrupo}}
+      <!-- <ion-item ng-repeat="calificacion in calificaciones" href="#/app/calificaciones/{{calificacion.codInscrito}}" ng-if="calificacion.nFinal != 0" class="item item-avatar item-icon-right"> -->
+      <ion-item ng-repeat="calificacion in calificaciones" href="#/app/calificaciones/{{calificacion.codInscrito}}" class="item item-avatar item-icon-right">
+       <img src="img/iAsignatura.png">{{calificacion.nombAsignatura}} <p>{{calificacion.codAsignatura}} | G{{calificacion.nGrupo}}</p><i class="icon ion-chevron-right"></i>
       </ion-item>
     </ion-list>
   </ion-content>
+    <div class="bar bar-footer">
+      <p>Develop By CDSOFT - Copyright &copy; 2017
+      Powered By UFG Cloud </p>
+      <span><img src="img/uvirtual.png" alt="Button banner" class="img-responsive img-brand-footer"></span>
+    </div>  
 </ion-view>

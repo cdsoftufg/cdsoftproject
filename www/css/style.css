@@ -1,1 +1,77 @@
 /* Empty. Add your own CSS if you like */
+.img-responsive 
+{
+  max-width: 100%; 
+  height: auto;
+  display:block;
+}
+
+.button
+{
+	border-color: #00529C;
+	color: #00529C;
+}
+
+.centrar
+{
+	vertical-align: middle;
+}
+
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+/*
+ * http://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
+ */
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+.AlineadoIzq { float:left; }
+
+.AlineadoDer { float:right; }
+
+.img-top-brand, .img-brand-footer
+{
+  height:   40px;
+}
+
+.justificado
+{
+  text-align: justify;
+  padding: 15px;
+}
+
+.img-center
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border:none;
+}
+
+.colorNotas
+{
+  color: #00529C;
+}
+
+.colorNotas2
+{
+  color: #f18700;
+}
+
+.colorNotas3
+{
+  color: #ef473a;
+}
